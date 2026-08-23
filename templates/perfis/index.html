@@ -1,0 +1,85 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Experienceln</title>
+    <link rel="stylesheet" href="{% static 'perfis/styles.css' %}" />
+</head>
+<body>
+    <div class="container">
+        <header class="cabecalho">
+            <div class="marca" id="nomeMarca">Experienceln</div>
+            <button id="botaoSair" class="botao-sair oculto">Sair</button>
+        </header>
+
+        <main>
+            <section id="secaoLogin" class="painel">
+                <h1>Login</h1>
+                <form id="formLogin">
+                    <label for="emailLogin">E-mail</label>
+                    <input id="emailLogin" type="email" name="email" placeholder="E-mail" required />
+
+                    <label for="senhaLogin">Senha</label>
+                    <input id="senhaLogin" type="password" name="senha" placeholder="Senha" required />
+
+                    <button type="submit" class="botao-principal">Entrar</button>
+                </form>
+                <a href="#" id="alternarCadastro" class="link-cadastro">cadastre-se</a>
+            </section>
+
+            <section id="secaoCadastro" class="painel oculto">
+                <h1>Cadastro</h1>
+                <form id="formCadastro">
+                    <label for="nomeCadastro">Nome</label>
+                    <input id="nomeCadastro" type="text" name="nome" placeholder="Nome" required />
+
+                    <label for="empresaCadastro">Empresa</label>
+                    <input id="empresaCadastro" type="text" name="empresa" placeholder="Empresa" />
+
+                    <label for="telefoneCadastro">Telefone</label>
+                    <input id="telefoneCadastro" type="text" name="telefone" placeholder="Telefone" />
+
+                    <label for="emailCadastro">E-mail</label>
+                    <input id="emailCadastro" type="email" name="email" placeholder="E-mail" required />
+
+                    <label for="senhaCadastro">Senha</label>
+                    <input id="senhaCadastro" type="password" name="senha" placeholder="Senha" required />
+
+                    <button type="submit" class="botao-principal">Cadastrar</button>
+                </form>
+                <a href="#" id="alternarLogin" class="link-cadastro">voltar</a>
+            </section>
+
+            <section id="secaoPerfil" class="perfil oculto">
+                <h2>Perfil</h2>
+                <div class="cartao-perfil">
+                    <p id="campoNome"></p>
+                    <p id="campoEmpresa"></p>
+                    <p id="campoTelefone"></p>
+                    <p id="campoEmail"></p>
+                </div>
+            </section>
+
+            <section id="secaoLista" class="lista oculto">
+                <h3>Todos os perfis</h3>
+                <div class="tabela-caixa">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th>Empresa</th>
+                                <th>E-mail</th>
+                            </tr>
+                        </thead>
+                        <tbody id="corpoTabela"></tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="{% static 'perfis/app.js' %}"></script>
+</body>
+</html>
